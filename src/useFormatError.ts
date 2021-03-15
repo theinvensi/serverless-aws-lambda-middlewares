@@ -6,7 +6,7 @@ export const useFormatError = {
 		) {
 			handler.response = { statusCode: 500, body: `${handler.error}` } as any
 		} else {
-			handler.response = { statusCode: (handler.error as any).statusCode || 500, body: `${(handler.error as any).error}` } as any
+			handler.response = { statusCode: handler.error.statusCode || 500, body: `${handler.error.error || handler.error}` } as any
 		}
 	}
 }

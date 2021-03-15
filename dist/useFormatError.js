@@ -17,7 +17,7 @@ exports.useFormatError = {
             handler.response = { statusCode: 500, body: `${handler.error}` };
         }
         else {
-            handler.response = { statusCode: handler.error.statusCode || 500, body: `${handler.error.error}` };
+            handler.response = { statusCode: handler.error.statusCode || 500, body: `${handler.error.error || handler.error}` };
         }
     })
 };
