@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.useFormatResponse = void 0;
-exports.useFormatResponse = {
+const useFormatResponse = (config) => ({
     after: (handler) => __awaiter(void 0, void 0, void 0, function* () {
         if (!handler.response)
             handler.response = {};
@@ -19,7 +19,14 @@ exports.useFormatResponse = {
             handler.response = {};
             handler.response.statusCode = 200;
             handler.response.headers = Object.assign(Object.assign(Object.assign({}, (handler.response.headers || {})), (handler.context.headers || {})), { 'Content-Type': 'application/json' });
+            if (config && config.cors) {
+                if (config.cors.credentials)
+                    handler.response.headers[`Access-Control-Allow-Credentials`] = config.cors.credentials;
+                if (config.cors.origin)
+                    handler.response.headers[`Access-Control-Allow-Origin`] = config.cors.origin;
+            }
             handler.response.body = body;
         }
     })
-};
+});
+exports.useFormatResponse = useFormatResponse;

@@ -1,6 +1,6 @@
 {
   "name": "serverless-aws-lambda-middlewares",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "./dist/index.js",
   "author": {
     "name": "Felipe Cantieri Testoni",
@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "@middy/core": "1.5.2",
-    "@middy/http-cors": "1.5.2",
     "@middy/http-json-body-parser": "1.5.2"
   }
 }
