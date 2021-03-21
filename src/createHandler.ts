@@ -7,8 +7,14 @@ import { useFormatResponse, useFormatError } from '.'
 
 type Handler = (event: APIGatewayProxyEvent, context: any) => any
 
-export const createHandler = (func: Handler) => middy(func)
-	.use(cors({ credentials: true, origin: `*`, headers: `*` }))
+interface Config {
+	origin: string,
+	credentials: boolean,
+	headers: string
+}
+
+export const createHandler = (func: Handler, config?: Config) => middy(func)
+	.use(cors({ credentials: config?.credentials || true, origin: config?.origin || `*`, headers: config?.headers || `*` }))
 	.use(httpJsonBodyParser())
 	.use(useFormatResponse)
 	.use(useFormatError)
