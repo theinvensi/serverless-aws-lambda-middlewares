@@ -1,4 +1,3 @@
-import { Config } from './createHandler';
-export declare const useFormatResponse: (config?: Config | undefined) => {
+export declare const useFormatResponse: {
     after: (handler: any) => Promise<void>;
 };

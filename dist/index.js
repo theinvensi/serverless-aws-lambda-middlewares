@@ -13,3 +13,4 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./createHandler"), exports);
 __exportStar(require("./useFormatError"), exports);
 __exportStar(require("./useFormatResponse"), exports);
+__exportStar(require("./useCORS"), exports);
