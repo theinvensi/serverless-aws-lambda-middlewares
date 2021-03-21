@@ -8,9 +8,9 @@ import { useFormatResponse, useFormatError } from '.'
 type Handler = (event: APIGatewayProxyEvent, context: any) => any
 
 interface Config {
-	origin: string,
-	credentials: boolean,
-	headers: string
+	origin?: string,
+	credentials?: boolean,
+	headers?: string
 }
 
 export const createHandler = (func: Handler, config?: Config) => middy(func)

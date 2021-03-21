@@ -1,6 +1,6 @@
 {
   "name": "serverless-aws-lambda-middlewares",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "main": "./dist/index.js",
   "author": {
     "name": "Felipe Cantieri Testoni",
